@@ -37,4 +37,9 @@ export class StatusHistoryRepositoryImpl implements StatusHistoryRepository {
     const entities = await this.repository.find();
     return entities.map((entity) => StatusHistoryMapper.toDomain(entity));
   }
+
+  public async findByPatientId(patientId: string): Promise<StatusHistory[]> {
+    const entities = await this.repository.find({ where: { patientId } });
+    return entities.map((entity) => StatusHistoryMapper.toDomain(entity));
+  }
 }

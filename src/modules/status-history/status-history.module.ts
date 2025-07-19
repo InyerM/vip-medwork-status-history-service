@@ -8,6 +8,7 @@ import { StatusHistoryRepositoryImpl } from './infrastructure/repositories/statu
 
 // Application
 import { CreateStatusHistoryUseCase } from './application/use-cases/create-status-history.use-case';
+import { FindByPatientIdUseCase } from './application/use-cases/find-by-patient-id.use-case';
 import { StatusHistoryService } from './application/services/status-history.service';
 
 // Interfaces
@@ -22,6 +23,7 @@ import { STATUS_HISTORY_INJECTION_TOKEN } from './domain/constants/status-histor
   providers: [
     StatusHistoryRepositoryImpl,
     CreateStatusHistoryUseCase,
+    FindByPatientIdUseCase,
     StatusHistoryService,
     {
       provide: STATUS_HISTORY_INJECTION_TOKEN,

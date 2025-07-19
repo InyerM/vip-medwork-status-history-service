@@ -4,4 +4,5 @@ export interface StatusHistoryRepository {
   findById(id: string): Promise<StatusHistory | null>;
   findAll(): Promise<StatusHistory[]>;
   create(statusHistory: Partial<StatusHistory>): Promise<void>;
+  findByPatientId(patientId: string): Promise<StatusHistory[]>;
 }
